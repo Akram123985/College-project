@@ -1,0 +1,96 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      async function loadComments() {
+        const response = await fetch("/comments");
+        const comments = await response.json();
+        document.getElementById("comments").innerHTML = comments
+          .map(
+            (c) =>
+              `<p><strong>${c.name}:</strong> ${c.comment} (<i>${c.email}</i>)</p>`
+          )
+          .join("");
+      }
+      window.onload = loadComments;
+    </script>
+    <title>Comments</title>
+    <link rel="stylesheet" href="ACProject.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <h1>Comments</h1>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="ACcontact.html">Contact</a>
+          <a href="ACComment.html">Queries</a>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <h2>FAQs</h2>
+      <p>Have a look at the most frequently asked questions:</p>
+      <div class="faq-container">
+        <div class="faq">
+          <button class="faq-question">
+            What is digital literacy?
+            <span class="arrow">&#x25BC;</span>
+          </button>
+          <div class="faq-answer">
+            Digital literacy is the ability to use digital technology,
+            communication tools, and the internet effectively and responsibly.
+          </div>
+        </div>
+        <div class="faq">
+          <button class="faq-question">
+            Why is cybersecurity important?
+            <span class="arrow">&#x25BC;</span>
+          </button>
+          <div class="faq-answer">
+            Cybersecurity protects personal data, financial information, and
+            digital identities from theft, fraud, and cyber threats.
+          </div>
+        </div>
+        <div class="faq">
+          <button class="faq-question">
+            What are some examples of digital literacy skills?
+            <span class="arrow">&#x25BC;</span>
+          </button>
+          <div class="faq-answer">
+            Examples include using search engines effectively, understanding how
+            to evaluate online information, using email safely, and managing
+            your digital identity.
+          </div>
+        </div>
+          <div class="faq">
+            <button class="faq-question">
+              What is online etiquette (netiquette)?
+              <span class="arrow">&#x25BC;</span>
+            </button>
+            <div class="faq-answer">
+              Netiquette refers to respectful and appropriate behavior when
+              communicating or interacting online, like being polite in comments
+              and avoiding spreading misinformation.
+            </div>
+          </div>
+          <div class="faq">
+            <button class="faq-question">
+              Why is it important to protect your personal information online?
+              <span class="arrow">&#x25BC;</span>
+            </button>
+            <div class="faq-answer">
+              Protecting personal information helps prevent identity theft,
+              scams, and unauthorized access to your accounts.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <b><p>&copy; 2025 Digital Literacy Project</p></b>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
