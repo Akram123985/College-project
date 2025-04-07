@@ -2,20 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      async function loadComments() {
-        const response = await fetch("/comments");
-        const comments = await response.json();
-        document.getElementById("comments").innerHTML = comments
-          .map(
-            (c) =>
-              `<p><strong>${c.name}:</strong> ${c.comment} (<i>${c.email}</i>)</p>`
-          )
-          .join("");
-      }
-      window.onload = loadComments;
-    </script>
-    <title>Comments</title>
+    <title>Queries</title>
     <link rel="stylesheet" href="ACProject.css" />
   </head>
   <body>
